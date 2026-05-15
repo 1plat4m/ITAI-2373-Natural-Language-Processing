@@ -1,0 +1,104 @@
+I need you to create a comprehensive Product Requirements Document (PRD) for my product idea. Please read the DOCX skill documentation first to ensure the document follows professional formatting standards.
+
+# Product Information
+
+**Product Name:** [Your product name]
+
+**Product Vision/Idea:** [Describe your core product idea in 2-4 sentences]
+
+**Problem Statement:** [What problem does this solve? Who experiences this problem?]
+
+**Target Users:** [Who are your primary and secondary users? Include demographics, behaviors, pain points]
+
+**Key Features/Capabilities:** [List 5-10 main features or capabilities you envision]
+
+**Success Metrics:** [How will you measure success? Include KPIs, goals, metrics]
+
+**Constraints & Assumptions:** [Any budget limits, technical constraints, timeline requirements, or key assumptions]
+
+**Competitive Context:** [Known competitors or alternatives, if any]
+
+**Additional Context:** [Any other relevant information about market, technology, business model, etc.]
+
+---
+
+# PRD Requirements
+
+Please create a complete, professional Product Requirements Document that includes:
+
+## 1. Executive Summary
+- Brief overview of the product
+- Key objectives and success criteria
+- High-level scope
+
+## 2. Product Overview
+- Vision and strategy
+- Problem statement with supporting context
+- Value proposition
+- Target market and user personas (create detailed personas based on the target users provided)
+
+## 3. Goals and Objectives
+- Business objectives
+- User objectives
+- Success metrics and KPIs
+- Timeline and milestones
+
+## 4. User Stories and Use Cases
+- Primary user flows (at least 3-5 detailed scenarios)
+- Edge cases and alternative flows
+- User journey maps
+
+## 5. Functional Requirements
+- Detailed feature specifications (organized by priority: Must-Have, Should-Have, Nice-to-Have)
+- User interface requirements
+- Data requirements
+- Integration requirements
+
+## 6. Non-Functional Requirements
+- Performance requirements
+- Security requirements
+- Scalability requirements
+- Accessibility requirements
+- Compliance and regulatory requirements
+
+## 7. Technical Considerations
+- High-level architecture approach
+- Technology stack recommendations
+- Third-party dependencies
+- APIs and integrations
+
+## 8. Design Requirements
+- UX principles and guidelines
+- Key user interface elements
+- Accessibility standards
+- Branding considerations
+
+## 9. Risk Assessment
+- Technical risks
+- Market risks
+- Resource risks
+- Mitigation strategies
+
+## 10. Open Questions and Assumptions
+- Unresolved questions
+- Key assumptions being made
+- Items requiring further research
+
+## 11. Appendix
+- Glossary of terms
+- References
+- Supporting research or data
+
+---
+
+# Formatting Instructions
+
+- Create this as a professional Word document (.docx)
+- Use clear heading hierarchy (Heading 1, Heading 2, Heading 3)
+- Include a table of contents
+- Use tables where appropriate for organizing information
+- Make the document comprehensive but scannable
+- Use professional business language
+- Ensure all sections flow logically
+
+Please create this PRD now and save it as a Word document.
