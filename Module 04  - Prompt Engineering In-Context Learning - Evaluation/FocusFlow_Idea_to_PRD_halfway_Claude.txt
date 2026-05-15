@@ -1,0 +1,1082 @@
+# Product Requirements Document
+
+## FocusFlow – AI-Powered Deep Work Assistant
+
+---
+
+## Document Header
+
+**Product/Feature Name:** FocusFlow  
+**Status:** Draft  
+**Author:** Product Team  
+**Stakeholders:** Product, Engineering, Design, Marketing, Legal  
+**Date Created:** 2026-02-03  
+**Last Updated:** 2026-02-03  
+**Version:** 1.0
+
+---
+
+## Executive Summary
+
+### One-liner
+FocusFlow is an AI-powered iOS app that automatically creates distraction-free work environments by intelligently blocking interruptions based on your calendar, screen time data, and work patterns.
+
+### Overview
+
+FocusFlow revolutionizes how knowledge workers achieve deep work by proactively predicting and preventing distractions before they happen. Unlike traditional focus apps that require manual configuration, FocusFlow uses machine learning to analyze your iPhone's screen time data, calendar appointments, and work patterns to automatically configure optimal focus blocks throughout your day.
+
+The app integrates seamlessly with Apple's Focus modes, enhancing them with predictive intelligence that adapts to your unique workflow. When your calendar shows a client meeting, FocusFlow doesn't just silence notifications—it intelligently blocks social media and email while allowing critical communications like urgent Slack messages to come through. This contextual awareness means you maintain productivity without missing truly important updates.
+
+With iOS 18's new Dynamic Focus API and iPhone 16's rumored Task Scheduling capabilities, FocusFlow is positioned to be the first app to leverage these platform-native features for automated productivity enhancement. As 73% of workers report needing better deep work solutions (2025 Gallup), and existing AI tools haven't adequately addressed this need, FocusFlow fills a critical gap in the productivity market.
+
+### Quick Facts
+
+- **Target Users:** Knowledge workers, executives, and professionals who struggle with digital distractions
+- **Problem Solved:** Inability to achieve deep work due to constant interruptions and poor distraction management
+- **Key Metric:** Daily deep work minutes achieved
+- **Target Launch:** Q3 2026
+
+---
+
+## Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Goals & Objectives](#goals--objectives)
+3. [User Personas](#user-personas)
+4. [User Stories & Requirements](#user-stories--requirements)
+5. [Success Metrics](#success-metrics)
+6. [Scope](#scope)
+7. [Technical Considerations](#technical-considerations)
+8. [Design & UX Requirements](#design--ux-requirements)
+9. [Timeline & Milestones](#timeline--milestones)
+10. [Risks & Mitigation](#risks--mitigation)
+11. [Dependencies & Assumptions](#dependencies--assumptions)
+12. [Open Questions](#open-questions)
+13. [Stakeholder Sign-Off](#stakeholder-sign-off)
+
+---
+
+## Problem Statement
+
+### The Problem
+
+Modern knowledge workers face an unprecedented crisis of attention. Despite having powerful productivity tools, professionals spend an average of 2.5 hours per day managing interruptions and attempting to regain focus after distractions. The average worker is interrupted every 6-12 minutes, and it takes 23 minutes on average to fully regain focus after an interruption.
+
+Existing focus apps require extensive manual configuration and fail to adapt to changing contexts throughout the day. A meeting with a client requires different distraction settings than a solo brainstorming session, yet current tools force users to manually adjust settings or create dozens of different focus modes. This cognitive overhead defeats the purpose of productivity tools.
+
+Furthermore, AI assistants and productivity apps have failed to solve the deep work problem. They remind users to focus but don't actively prevent distractions. They suggest task management but don't create the environment necessary for sustained concentration.
+
+### Current State
+
+**How users currently handle this:**
+
+- **Manual Focus Mode Creation:** Users create multiple Apple Focus modes (Work, Meeting, Personal, etc.) and manually switch between them throughout the day
+- **App Blocking Extensions:** Users install third-party apps like Forest, Freedom, or Focus@Will that require manual activation before each work session
+- **Calendar Blocking:** Users manually block calendar time for "focus work" but still receive notifications and distractions during these blocks
+- **Willpower-Based Approaches:** Many users simply try to resist checking distracting apps, which depletes mental energy and often fails
+
+**Workarounds and their limitations:**
+
+- Setting "Do Not Disturb" for all notifications (too blunt—misses important updates)
+- Using the Pomodoro Technique with timer apps (requires manual start/stop, doesn't prevent access to distracting apps)
+- Physically hiding phones in drawers (impractical for those who need their phones for work)
+- Using website blockers on computers while phone remains unmanaged
+
+### Impact
+
+#### User Impact
+
+- **Productivity Loss:** Knowledge workers lose 2-3 hours daily to distraction recovery time
+- **Increased Stress:** 68% of professionals report feeling overwhelmed by digital interruptions (2025 McKinsey)
+- **Reduced Work Quality:** Deep, creative work suffers when concentration is repeatedly broken
+- **Decision Fatigue:** Constant micro-decisions about whether to check notifications drain mental resources
+- **Guilt and Frustration:** Users feel they should be more disciplined but lack effective tools to support behavioral change
+
+**Quantified impact:**
+- Users spend an average of 15-20 minutes daily configuring focus settings across various apps
+- 47% of users abandon focus apps within the first week due to configuration complexity
+- The average professional checks their phone 96 times per day, with 65% of those checks being unnecessary
+
+#### Business Impact
+
+- **Lost Revenue:** Companies lose an estimated $588 billion annually to workplace distractions in the US alone
+- **Reduced Innovation:** Deep work is essential for creative problem-solving and innovation; its absence limits organizational advancement
+- **Employee Burnout:** Constant interruptions contribute to stress and burnout, increasing healthcare costs and turnover
+- **Competitive Disadvantage:** Organizations whose workers can't achieve flow states fall behind competitors in quality and speed
+- **Market Opportunity:** The productivity software market is projected to reach $102 billion by 2027, with focus and attention management being the fastest-growing segment
+
+**Support and operational costs:**
+- Current productivity apps generate high support ticket volumes due to configuration complexity
+- Users often contact IT departments for help managing device settings and focus modes
+
+### Why Now?
+
+**Technology readiness:**
+- **iOS 18 Dynamic Focus API:** Apple's new API (releasing Q3 2026) allows apps to programmatically adjust Focus modes based on real-time context and user activity
+- **iPhone 16 Task Scheduling:** Rumored hardware-level task scheduling enables apps to automate workflow configuration at the OS level
+- **On-device ML Models:** A17 Pro and newer chips can run sophisticated machine learning models locally, enabling privacy-preserving personalization
+
+**Market timing:**
+- **Post-pandemic work patterns:** Hybrid and remote work have made self-directed focus management more critical than ever
+- **AI productivity gap:** While AI tools excel at task completion, they've failed to address the environment needed for focused work
+- **Attention crisis awareness:** Mainstream recognition of the "attention economy" problem has created demand for solutions
+- **Privacy concerns:** Users increasingly prefer on-device AI over cloud-based solutions that analyze their behavior
+
+**Competitive landscape:**
+- Existing focus apps (Forest, Freedom, Focus@Will) haven't evolved beyond manual activation models
+- Calendar apps don't integrate with system-level distraction blocking
+- Apple's native Focus modes are powerful but require extensive manual setup
+- No current solution combines predictive AI with calendar integration and habit learning
+
+**Cultural moment:**
+- Cal Newport's "Deep Work" and similar productivity frameworks have mainstream adoption
+- The 2025 Gallup study showing 73% of workers need better deep work tools validates market demand
+- Growing backlash against "always-on" culture creates space for focus-first tools
+- Gen Z and Millennial workers prioritize tools that support work-life boundaries
+
+---
+
+## Goals & Objectives
+
+### Business Goals
+
+1. **Market Leadership in AI-Powered Focus Management**
+   - Become the #1 productivity app in the App Store's "Focus & Attention" category within 6 months of launch
+   - Achieve 500,000 downloads in first year, with 100,000 paid subscribers
+   - Generate $6M ARR by end of Year 1 through subscription model
+
+2. **Demonstrate Proprietary AI Value**
+   - Achieve 40% better distraction prevention than rule-based competitors (measured by user-reported deep work minutes)
+   - Build defensible moat through personalized habit models that improve over time
+   - Create network effects through anonymized pattern sharing (opt-in) that improves prediction accuracy
+
+3. **Establish Platform Integration Leadership**
+   - Be first to market with iOS 18 Dynamic Focus integration at iOS 18 launch
+   - Become Apple's recommended solution for automated focus management
+   - Build foundation for cross-platform expansion (watchOS, macOS, iPadOS in Year 2)
+
+### User Goals
+
+1. **Effortless Deep Work Achievement**
+   - Enable users to achieve 2+ hours of uninterrupted deep work daily without manual configuration
+   - Reduce time spent managing focus settings from 15-20 minutes daily to less than 2 minutes
+   - Increase user-reported productivity scores by 35% within first month of use
+
+2. **Intelligent Context Awareness**
+   - Automatically adapt distraction blocking to meeting type (client call vs. team standup vs. solo work)
+   - Learn individual work patterns and preferences over time
+   - Balance protection from distractions with availability for truly urgent matters
+
+3. **Behavioral Insight and Improvement**
+   - Provide actionable insights about distraction patterns and work habits
+   - Help users understand their peak productivity times and optimal work rhythms
+   - Create positive reinforcement loops that support sustained behavior change
+
+### Non-Goals
+
+**What we're explicitly NOT doing in V1:**
+
+- **Cross-platform support:** Initial release is iOS-only; macOS/Android expansion planned for Year 2
+- **Team/organizational features:** V1 focuses on individual users; enterprise features planned for V2
+- **Content blocking beyond apps:** V1 won't block specific websites within browsers (Safari content filtering is V2)
+- **Pomodoro timer replacement:** We integrate with existing time management techniques but don't replicate timer functionality
+- **Task management:** FocusFlow manages focus environment, not task lists or project management
+- **Communication platform:** We block/allow apps but don't provide alternative messaging channels
+- **Wellness/meditation features:** Pure focus on work productivity, not meditation or general wellness
+- **Desktop application:** Mobile-first approach; desktop app is future consideration
+- **Integration with non-Apple ecosystems:** V1 leverages Apple's ecosystem exclusively
+
+---
+
+## User Personas
+
+### Primary Persona: Sarah the Strategic Consultant
+
+**Demographics:**
+- Age range: 28-42
+- Role/Title: Management Consultant, Strategy Director, Senior Analyst
+- Tech savviness: High (early adopter, comfort with new apps and features)
+- Location: Urban areas, frequently travels for client meetings
+- Income: $95K-$180K annually
+
+**Behaviors:**
+- Checks phone 80-120 times daily, often reflexively
+- Has 4-6 calendar meetings daily, mixing virtual and in-person
+- Works across multiple time zones with international clients
+- Attempts to block "focus time" on calendar but rarely protects it
+- Uses iPhone for 60% of work tasks, laptop for deep analytical work
+- Already uses 2-3 productivity apps but finds them cumbersome
+
+**Needs & Motivations:**
+- Needs to produce high-quality strategic analysis requiring deep concentration
+- Must remain responsive to client needs while maintaining personal boundaries
+- Wants to demonstrate consistent high performance without burning out
+- Values appearing professional and in-control to clients and colleagues
+- Desires work-life balance but struggles to disconnect from work demands
+
+**Pain Points:**
+- "I set aside time for deep work but end up responding to Slack messages and emails instead"
+- Feels guilty about missing messages but knows constant availability hurts work quality
+- Overwhelmed by managing multiple focus modes across different apps
+- Anxiety about potentially missing genuinely urgent client communications
+- Frustrated that existing tools require too much manual management
+
+**Current App Usage:**
+- Apple Calendar (heavily used)
+- Slack (50+ messages daily)
+- Email (3 different accounts)
+- LinkedIn (professional networking, 2-3 times daily)
+- News apps (frequent distraction)
+- Has tried Freedom, Forest, and Focus@Will but abandoned each within weeks
+
+**Quote:** _"I know I need uninterrupted time to do my best work, but I'm terrified of missing something urgent from a client. I end up in this constant state of partial attention where I'm not fully focused on anything."_
+
+---
+
+### Secondary Persona: Marcus the Engineering Manager
+
+**Demographics:**
+- Age range: 32-48
+- Role/Title: Engineering Manager, Tech Lead, VP of Engineering
+- Tech savviness: Very high (developer background, power user)
+- Location: Tech hubs (SF, NYC, Austin, Seattle) or remote
+- Income: $140K-$250K annually
+
+**Behaviors:**
+- Switches between "maker time" (coding, architecture) and "manager time" (meetings, reviews)
+- Has back-to-back meetings 3-4 days per week, prefers uninterrupted blocks other days
+- Uses multiple devices simultaneously (iPhone, iPad, MacBook)
+- Strong opinions about tool efficiency and automation
+- Already uses advanced Focus modes and Shortcuts but wants better automation
+
+**Needs & Motivations:**
+- Needs extended blocks (3-4 hours) for complex technical work
+- Must balance team availability with personal productivity
+- Values systems thinking and automated solutions
+- Wants data-driven insights about productivity patterns
+- Expects technical precision and customization options
+
+**Pain Points:**
+- "I've built elaborate Shortcuts workflows but they're fragile and require constant maintenance"
+- Context-switching between management and technical work is cognitively expensive
+- Existing focus apps aren't sophisticated enough for complex workflows
+- Team expects high responsiveness, which conflicts with deep technical work
+- Wants granular control but hates manual configuration
+
+**Current App Usage:**
+- GitHub (constant notifications)
+- Slack (team communication, 100+ messages daily)
+- Calendar (meticulously time-blocked)
+- Multiple email accounts (work, personal, professional communities)
+- Has custom Shortcuts automations for focus modes
+- Uses RescueTime for analytics but doesn't act on insights
+
+**Quote:** _"I can build automation for everything except my own focus. I need a system smart enough to handle the nuance of when I actually need to be interrupted versus when it can wait."_
+
+---
+
+### Tertiary Persona: Jessica the Creative Director
+
+**Demographics:**
+- Age range: 29-41
+- Role/Title: Creative Director, Senior Designer, Brand Strategist
+- Tech savviness: Medium-high (design-focused, values aesthetics and UX)
+- Location: Major cities, often works from studios or creative spaces
+- Income: $75K-$145K annually
+
+**Behaviors:**
+- Work rhythm alternates between collaborative brainstorming and solo creative execution
+- Heavily visual—responds to beautiful, well-designed interfaces
+- Uses phone for inspiration (Instagram, Pinterest, Behance) but it becomes a distraction
+- Protects "deep creation time" but struggles to enforce boundaries
+- Calendar is less structured than corporate personas
+
+**Needs & Motivations:**
+- Needs sustained focus for conceptual development and design execution
+- Must balance client feedback responsiveness with creative flow states
+- Values tools that feel inspiring, not corporate or restrictive
+- Wants to harness social media for inspiration without getting distracted
+- Seeks balance between creative exploration and disciplined execution
+
+**Pain Points:**
+- "Instagram is both my inspiration source and my biggest time-waster"
+- Feels like existing focus apps are designed for corporate workers, not creatives
+- Struggles to define "urgent" in creative work where iteration is constant
+- Creative flow is precious and hard to recapture once broken
+- Guilt about "procrastination" when creative exploration is actually valuable
+
+**Current App Usage:**
+- Figma, Adobe Creative Suite
+- Instagram (professional and distraction)
+- Client communication via email and WhatsApp
+- Notion for project management
+- Spotify for focus music
+- Has tried focus apps but found them aesthetically uninspiring
+
+**Quote:** _"My most creative work happens when I'm fully immersed, but the constant pings pull me out of that state. I need something that understands the difference between creative exploration and mindless scrolling."_
+
+---
+
+## User Stories & Requirements
+
+### Epic 1: Intelligent Calendar Integration
+
+#### Must-Have Stories (P0)
+
+##### Story 1.1: Automatic Focus Block Detection
+
+**User Story:**
+```
+As a busy professional with a packed calendar,
+I want FocusFlow to automatically detect my meetings and appointments,
+So that I don't have to manually configure focus settings for each event.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user grants calendar access, when FocusFlow launches, then it analyzes all calendar events for the next 7 days
+- [ ] Given a calendar event exists, when the event starts, then FocusFlow automatically activates an appropriate focus mode
+- [ ] Given a calendar event is classified (meeting type, participants, duration), when settings are applied, then the correct distraction level is enforced
+- [ ] Given the calendar event ends, when cleanup occurs, then FocusFlow automatically deactivates the focus mode
+- [ ] Edge case: Multi-day events should apply focus rules only during typical working hours (9am-6pm in user's timezone)
+- [ ] Edge case: Overlapping events should apply the most restrictive focus settings
+
+**Priority:** Must Have (P0)  
+**Effort:** Large (L)  
+**Dependencies:** iOS Calendar API access, Core ML model for event classification
+
+---
+
+##### Story 1.2: Meeting Type Classification
+
+**User Story:**
+```
+As a user with diverse types of meetings,
+I want FocusFlow to distinguish between client calls, team meetings, and focus blocks,
+So that distraction settings are contextually appropriate.
+```
+
+**Acceptance Criteria:**
+- [ ] Given a calendar event with specific keywords (client, 1:1, team, standup, brainstorm, focus), when classification occurs, then the event is categorized into one of 6 types: Client Meeting, Team Meeting, 1:1, Focus Block, Social, Other
+- [ ] Given event attendee count and organizer, when classification runs, then external vs internal meetings are identified
+- [ ] Given recurring event patterns, when analysis occurs, then meeting importance is inferred from historical context
+- [ ] Given ambiguous events, when user feedback is provided, then the ML model learns and improves classification
+- [ ] Edge case: Events without clear indicators default to "Medium Focus" with user prompt for feedback
+
+**Priority:** Must Have (P0)  
+**Effort:** Extra Large (XL)  
+**Dependencies:** Natural language processing model, attendee analysis algorithm
+
+---
+
+##### Story 1.3: Smart Notification Filtering
+
+**User Story:**
+```
+As a professional who needs to stay available for urgent matters,
+I want FocusFlow to intelligently allow critical notifications during focus time,
+So that I don't miss genuinely important updates while blocking distractions.
+```
+
+**Acceptance Criteria:**
+- [ ] Given a focus session is active, when a notification arrives, then it is evaluated against urgency criteria (sender importance, message content, timing)
+- [ ] Given an urgent notification (from VIP contacts, with urgent keywords, or call from favorites), when evaluated, then it is allowed through
+- [ ] Given a non-urgent notification (social media, promotional emails, news), when evaluated, then it is blocked or delayed until focus session ends
+- [ ] Given repeated notifications from same source, when pattern is detected, then urgency model adapts to reduce false positives
+- [ ] Edge case: Unknown senders can be evaluated based on message content for potential urgency
+- [ ] Edge case: User can manually override and allow specific apps/contacts through during any session
+
+**Priority:** Must Have (P0)  
+**Effort:** Extra Large (XL)  
+**Dependencies:** Notification API access, urgency classification ML model, VIP contact integration
+
+---
+
+#### Should-Have Stories (P1)
+
+##### Story 1.4: Pre-Meeting Preparation Mode
+
+**User Story:**
+```
+As a user who needs to prepare for important meetings,
+I want FocusFlow to automatically create focus time before major meetings,
+So that I can review materials without distraction.
+```
+
+**Acceptance Criteria:**
+- [ ] Given a high-importance meeting (client, executive, presentation), when the event is 30-60 minutes away, then FocusFlow suggests activating preparation mode
+- [ ] Given preparation mode is accepted, when activated, then distractions are blocked and relevant materials (emails, docs, calendar notes) are surfaced
+- [ ] Given user patterns show they typically prepare in advance, when similar events occur, then preparation mode activates automatically
+- [ ] Edge case: Back-to-back meetings skip preparation mode to avoid overlap
+
+**Priority:** Should Have (P1)  
+**Effort:** Medium (M)  
+**Dependencies:** Event importance scoring, document integration APIs
+
+---
+
+##### Story 1.5: Post-Meeting Recovery Time
+
+**User Story:**
+```
+As a user who feels mentally drained after long meetings,
+I want FocusFlow to provide protected time after exhausting meetings,
+So that I can process information and reset before the next task.
+```
+
+**Acceptance Criteria:**
+- [ ] Given a meeting over 60 minutes ends, when cleanup occurs, then FocusFlow offers 15-minute recovery mode
+- [ ] Given recovery mode is activated, when running, then all notifications are blocked and calming interface is displayed
+- [ ] Given user accepts recovery mode frequently, when patterns emerge, then it activates automatically
+- [ ] Edge case: User can dismiss recovery mode immediately if needed
+- [ ] Edge case: Recovery mode doesn't activate if next meeting starts within 10 minutes
+
+**Priority:** Should Have (P1)  
+**Effort:** Small (S)  
+**Dependencies:** Meeting duration tracking, user preference learning
+
+---
+
+### Epic 2: Habit Learning & Prediction
+
+#### Must-Have Stories (P0)
+
+##### Story 2.1: Screen Time Pattern Analysis
+
+**User Story:**
+```
+As a user with unique work patterns,
+I want FocusFlow to learn when I'm most productive and most distracted,
+So that it can proactively prevent interruptions during my peak focus times.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user grants Screen Time API access, when analysis runs, then FocusFlow identifies top distraction apps and usage patterns
+- [ ] Given 7 days of usage data, when patterns emerge, then peak focus times (when distractions are lowest) are identified
+- [ ] Given distraction patterns (time of day, day of week, app categories), when predictions are made, then likely distraction moments are forecast 24 hours ahead
+- [ ] Given usage data updates daily, when the model retrains, then predictions improve over time
+- [ ] Edge case: Insufficient data (less than 3 days) shows generic recommendations until personalized
+
+**Priority:** Must Have (P0)  
+**Effort:** Extra Large (XL)  
+**Dependencies:** Screen Time API, time-series ML model, on-device data storage
+
+---
+
+##### Story 2.2: Predictive Focus Activation
+
+**User Story:**
+```
+As a user who often forgets to manually start focus modes,
+I want FocusFlow to automatically detect when I'm trying to focus,
+So that I receive protection without having to remember to activate it.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user opens a productivity app (email, docs, IDE), when behavior indicates focus intent, then FocusFlow suggests activating focus mode
+- [ ] Given historical patterns show the user typically works 9-11am, when this time arrives, then focus mode auto-activates with notification
+- [ ] Given user is in a location associated with focus (office, library), when detected, then context-appropriate focus mode is suggested
+- [ ] Given rapid app switching behavior, when detected as distraction spiral, then FocusFlow offers immediate intervention
+- [ ] Edge case: Auto-activation can be disabled in settings for users who prefer manual control
+
+**Priority:** Must Have (P0)  
+**Effort:** Extra Large (XL)  
+**Dependencies:** App usage detection, location services (optional), behavioral pattern matching
+
+---
+
+##### Story 2.3: Distraction Trigger Identification
+
+**User Story:**
+```
+As a user who wants to understand my distraction patterns,
+I want FocusFlow to identify what triggers my unproductive behavior,
+So that I can develop awareness and make better choices.
+```
+
+**Acceptance Criteria:**
+- [ ] Given usage data over 14+ days, when analysis completes, then common distraction triggers are identified (time of day, emotional state proxies, preceding apps, etc.)
+- [ ] Given triggers are identified, when insights are generated, then actionable recommendations are provided
+- [ ] Given trigger patterns, when similar conditions occur in real-time, then preemptive interventions are offered
+- [ ] Given user feedback on insights, when provided, then model accuracy improves
+- [ ] Edge case: Privacy-sensitive triggers (based on message content) are anonymized and processed on-device only
+
+**Priority:** Must Have (P0)  
+**Effort:** Large (L)  
+**Dependencies:** Advanced analytics engine, causal inference model, insight generation system
+
+---
+
+#### Should-Have Stories (P1)
+
+##### Story 2.4: Productivity Score Calculation
+
+**User Story:**
+```
+As a user who wants to improve my focus over time,
+I want to see a daily Deep Work Score that reflects my productivity,
+So that I can track improvement and understand what's working.
+```
+
+**Acceptance Criteria:**
+- [ ] Given daily activity data, when score calculation runs, then a 0-100 Deep Work Score is generated based on: time in focus, distraction resistance, goal achievement, and work quality proxies
+- [ ] Given score over time, when viewed, then trends and patterns are visualized with insights
+- [ ] Given exceptional days (high or low scores), when analysis occurs, then contributing factors are highlighted
+- [ ] Given the user wants to improve, when recommendations are generated, then specific, actionable suggestions are provided
+- [ ] Edge case: Score calculation requires minimum 3 days of data; shows "building baseline" before that
+
+**Priority:** Should Have (P1) - Premium feature  
+**Effort:** Large (L)  
+**Dependencies:** Scoring algorithm, data visualization library, insight generation
+
+---
+
+##### Story 2.5: Weekly Focus Report
+
+**User Story:**
+```
+As a user who wants accountability and insight,
+I want to receive a weekly summary of my focus patterns and achievements,
+So that I can celebrate progress and identify areas for improvement.
+```
+
+**Acceptance Criteria:**
+- [ ] Given 7 days of data, when Sunday evening arrives, then a weekly report is generated showing: total deep work time, top achievements, biggest distractions, and recommendations
+- [ ] Given week-over-week data, when report is created, then progress comparisons are included
+- [ ] Given exceptional achievements (personal bests, streaks), when detected, then celebratory elements are included
+- [ ] Given the report, when user views it, then they can share achievements to social media (optional)
+- [ ] Edge case: First week shows setup progress instead of comparative data
+
+**Priority:** Should Have (P1) - Premium feature  
+**Effort:** Medium (M)  
+**Dependencies:** Report generation engine, data aggregation, notification system
+
+---
+
+### Epic 3: Apple Ecosystem Integration
+
+#### Must-Have Stories (P0)
+
+##### Story 3.1: Focus Mode Enhancement
+
+**User Story:**
+```
+As an existing user of Apple Focus modes,
+I want FocusFlow to enhance my existing configurations,
+So that I don't have to abandon my current setup.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user has existing Focus modes configured, when FocusFlow is set up, then it detects and imports these configurations
+- [ ] Given FocusFlow wants to activate focus, when triggered, then it uses existing Apple Focus modes as foundation and enhances with additional intelligence
+- [ ] Given Apple Focus mode settings change, when sync occurs, then FocusFlow adapts its behavior accordingly
+- [ ] Given conflicts between FocusFlow suggestions and user's manual Focus mode activation, when detected, then user's choice takes precedence
+- [ ] Edge case: Users without existing Focus modes are guided through basic setup
+
+**Priority:** Must Have (P0)  
+**Effort:** Large (L)  
+**Dependencies:** Focus Mode API (iOS 18), configuration import logic
+
+---
+
+##### Story 3.2: Dynamic Focus API Integration
+
+**User Story:**
+```
+As a user running iOS 18+,
+I want FocusFlow to leverage Dynamic Focus capabilities,
+So that focus settings adapt in real-time to my activity.
+```
+
+**Acceptance Criteria:**
+- [ ] Given iOS 18 Dynamic Focus API is available, when FocusFlow detects real-time context changes (app switches, location changes, user activity), then focus settings automatically adjust
+- [ ] Given different types of work (creative vs analytical), when detected through app usage, then appropriate distraction levels are applied
+- [ ] Given interruptions end, when returning to work, then previous focus state is automatically restored
+- [ ] Given API rate limits, when managing updates, then changes are batched to avoid exceeding limits
+- [ ] Edge case: Fallback to polling-based approach on iOS 17 and earlier
+
+**Priority:** Must Have (P0)  
+**Effort:** Extra Large (XL)  
+**Dependencies:** iOS 18 SDK, Dynamic Focus API documentation, extensive testing
+
+---
+
+##### Story 3.3: Siri Shortcuts Integration
+
+**User Story:**
+```
+As a power user who loves automation,
+I want to control FocusFlow through Siri and Shortcuts,
+So that I can integrate it into my existing workflows.
+```
+
+**Acceptance Criteria:**
+- [ ] Given FocusFlow supports Shortcuts, when user creates automation, then key actions are available: Start Focus Session, End Session, Enable/Disable AI Predictions, Check Today's Score
+- [ ] Given voice command to Siri, when spoken, then appropriate FocusFlow action executes
+- [ ] Given Shortcuts automation (time-based, location-based, app-based), when triggered, then FocusFlow responds
+- [ ] Given parameters in Shortcuts (duration, apps to block, urgency threshold), when configured, then custom sessions are created
+- [ ] Edge case: Shortcuts created before FocusFlow installation show helpful error messages
+
+**Priority:** Must Have (P0)  
+**Effort:** Medium (M)  
+**Dependencies:** SiriKit framework, Shortcuts API, comprehensive action definitions
+
+---
+
+#### Should-Have Stories (P1)
+
+##### Story 3.4: Apple Watch Integration
+
+**User Story:**
+```
+As a user who wears an Apple Watch,
+I want to see my focus status and control sessions from my wrist,
+So that I don't have to pull out my phone.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user has paired Apple Watch, when focus session is active, then Watch face shows status
+- [ ] Given Watch complications are available, when installed, then current Deep Work Score or session timer is displayed
+- [ ] Given Watch notifications, when focus session is active, then identical filtering rules apply
+- [ ] Given quick actions on Watch, when tapped, then user can extend, pause, or end sessions
+- [ ] Edge case: Watch app works offline and syncs when iPhone is nearby
+
+**Priority:** Should Have (P1)  
+**Effort:** Large (L)  
+**Dependencies:** watchOS SDK, Watch connectivity framework, complication design
+
+---
+
+##### Story 3.5: iCloud Sync
+
+**User Story:**
+```
+As a user with multiple Apple devices,
+I want my FocusFlow settings and insights to sync across devices,
+So that I have consistent experience everywhere.
+```
+
+**Acceptance Criteria:**
+- [ ] Given the user has iCloud enabled, when settings change on one device, then they sync to all devices within 60 seconds
+- [ ] Given usage data is collected, when sync occurs, then analytics and insights are available across devices
+- [ ] Given conflicting changes on two devices, when sync resolves, then most recent change wins with no data loss
+- [ ] Given sync failures (no internet), when connectivity restores, then queued changes are applied in order
+- [ ] Edge case: Large data sets (years of history) are paginated for efficient sync
+
+**Priority:** Should Have (P1)  
+**Effort:** Medium (M)  
+**Dependencies:** CloudKit framework, conflict resolution logic, data migration strategy
+
+---
+
+### Epic 4: User Onboarding & Configuration
+
+#### Must-Have Stories (P0)
+
+##### Story 4.1: Intelligent Onboarding Flow
+
+**User Story:**
+```
+As a new user downloading FocusFlow,
+I want a quick, clear onboarding that gets me productive immediately,
+So that I don't abandon the app due to complexity.
+```
+
+**Acceptance Criteria:**
+- [ ] Given first app launch, when onboarding starts, then user completes setup in under 3 minutes
+- [ ] Given permission requests (calendar, screen time, notifications), when presented, then clear value propositions are shown for each
+- [ ] Given user role/persona questions, when answered, then default settings are pre-configured appropriately
+- [ ] Given onboarding completion, when finished, then first focus session is auto-scheduled based on calendar
+- [ ] Edge case: Users can skip onboarding and explore app, with ability to restart onboarding from settings
+- [ ] Edge case: Users who deny permissions see limited-functionality mode with clear upgrade path
+
+**Priority:** Must Have (P0)  
+**Effort:** Medium (M)  
+**Dependencies:** Permission flow design, persona identification, default configuration templates
+
+---
+
+##### Story 4.2: VIP Contact Configuration
+
+**User Story:**
+```
+As a user who needs to stay available for specific people,
+I want to easily designate VIP contacts who can always reach me,
+So that I don't miss critical personal or professional communications.
+```
+
+**Acceptance Criteria:**
+- [ ] Given onboarding or settings, when VIP configuration is accessed, then user can select from contacts or manually add
+- [ ] Given VIP contacts are configured, when notifications arrive from them, then they always bypass focus mode blocks
+- [ ] Given VIP contact calls or texts, when received during focus, then special ringtone/alert is used
+- [ ] Given too many VIPs are added (10+), when warned, then user understands this reduces effectiveness
+- [ ] Edge case: VIP list can include entire contact groups (e.g., "Family")
+
+**Priority:** Must Have (P0)  
+**Effort:** Small (S)  
+**Dependencies:** Contacts API integration, notification filtering system
+
+---
+
+##### Story 4.3: App Categorization & Blocking
+
+**User Story:**
+```
+As a user with specific distraction patterns,
+I want to customize which apps are blocked during focus sessions,
+So that FocusFlow aligns with my unique needs.
+```
+
+**Acceptance Criteria:**
+- [ ] Given app installation data, when categorization occurs, then apps are auto-sorted into: Productive, Neutral, Distracting, with smart defaults based on app category
+- [ ] Given user wants to customize, when settings are accessed, then drag-and-drop interface allows easy recategorization
+- [ ] Given focus session types (deep work, meeting, light focus), when configured, then different blocking rules can apply to each
+- [ ] Given user overrides during session (unblocks an app temporarily), when logged, then ML model learns from this preference
+- [ ] Edge case: System apps (Phone, Messages, Settings) cannot be fully blocked but can have notification filtering
+
+**Priority:** Must Have (P0)  
+**Effort:** Medium (M)  
+**Dependencies:** App detection API, category database, drag-and-drop UI component
+
+---
+
+#### Nice-to-Have Stories (P2)
+
+##### Story 4.4: Colleague Focus Sharing (Future)
+
+**User Story:**
+```
+As a team member who respects my colleagues' focus time,
+I want to see when my teammates are in focus mode,
+So that I can avoid interrupting them unnecessarily.
+```
+
+**Acceptance Criteria:**
+- [ ] Given user opts into focus sharing, when focus session is active, then designated colleagues can see status
+- [ ] Given shared status, when viewed by colleague, then they see general availability ("In deep work") not detailed activity
+- [ ] Given urgent need to contact someone in focus, when messaging, then they can mark message as urgent to bypass
+- [ ] Given privacy controls, when configured, then user can limit who sees status and when
+- [ ] Edge case: Focus sharing is opt-in only and disabled by default
+
+**Priority:** Nice to Have (P2) - V2 feature  
+**Effort:** Large (L)  
+**Dependencies:** Backend infrastructure, team collaboration features, privacy framework
+
+---
+
+### Functional Requirements
+
+| Req ID | Description | Priority | Status |
+|--------|-------------|----------|--------|
+| FR-001 | System must sync with iOS Calendar to read events and metadata | Must Have | Open |
+| FR-002 | System must access Screen Time API for usage pattern analysis | Must Have | Open |
+| FR-003 | System must classify calendar events into 6 types using NLP | Must Have | Open |
+| FR-004 | System must filter notifications based on urgency scoring | Must Have | Open |
+| FR-005 | System must integrate with Apple Focus Mode API | Must Have | Open |
+| FR-006 | System must store user data encrypted on-device | Must Have | Open |
+| FR-007 | System must provide Daily Deep Work Score (0-100) | Should Have | Open |
+| FR-008 | System must generate weekly focus reports | Should Have | Open |
+| FR-009 | System must support Siri Shortcuts with 4+ actions | Must Have | Open |
+| FR-010 | System must allow VIP contact configuration with bypass rules | Must Have | Open |
+| FR-011 | System must enable custom app categorization | Must Have | Open |
+| FR-012 | System must auto-activate focus based on predicted patterns | Must Have | Open |
+| FR-013 | System must sync settings and data via iCloud | Should Have | Open |
+| FR-014 | System must provide Apple Watch complications and controls | Should Have | Open |
+| FR-015 | System must complete onboarding in under 3 minutes | Must Have | Open |
+
+### Non-Functional Requirements
+
+| Req ID | Category | Description | Target |
+|--------|----------|-------------|--------|
+| NFR-001 | Performance | App launch time (cold start) | < 1.5 seconds |
+| NFR-002 | Performance | Calendar sync time (100 events) | < 2 seconds |
+| NFR-003 | Performance | ML prediction latency | < 500ms |
+| NFR-004 | Performance | Focus mode activation time | < 1 second |
+| NFR-005 | Battery | Battery drain during active focus session | < 2% per hour |
+| NFR-006 | Privacy | All ML processing must occur on-device | 100% on-device |
+| NFR-007 | Privacy | No user data transmitted to external servers | Zero external transmission |
+| NFR-008 | Accessibility | WCAG 2.1 Level AA compliance | Full compliance |
+| NFR-009 | Accessibility | VoiceOver support for all features | 100% coverage |
+| NFR-010 | Reliability | App crash rate | < 0.1% of sessions |
+| NFR-011 | Reliability | Data sync success rate | > 99.5% |
+| NFR-012 | Storage | On-device storage for 1 year of data | < 100 MB |
+| NFR-013 | Compatibility | Minimum iOS version supported | iOS 17.0 |
+| NFR-014 | Compatibility | Optimal experience on iOS version | iOS 18.0+ |
+| NFR-015 | Scalability | Support calendar with 1000+ events | No performance degradation |
+
+---
+
+## Success Metrics
+
+### Key Performance Indicators (KPIs)
+
+#### Primary Metric (North Star)
+
+**Metric:** Daily Deep Work Minutes (DDWM)  
+**Definition:** Average minutes per day users spend in uninterrupted focus sessions (no app switches to blocked apps, no allowed interruptions)  
+**Current Baseline:** Pre-FocusFlow average is 47 minutes/day for target users (industry research)  
+**Target:** 120 minutes/day within 30 days of regular use  
+**Why This Metric:** Deep work minutes directly correlate with user value, productivity improvement, and likelihood to subscribe. It's measurable, actionable, and aligns with our core value proposition.
+
+**Measurement methodology:**
+- Track focus session duration from start to end
+- Subtract any interruptions or app switches to blocked categories
+- Calculate 7-day rolling average per user
+- Aggregate across user base for cohort analysis
+
+#### Secondary Metrics
+
+| Metric | Current | Target | Timeframe |
+|--------|---------|--------|-----------|
+| Day 7 Retention Rate | 45% (industry avg) | 65% | First 7 days |
+| Day 30 Retention Rate | 25% (industry avg) | 45% | First 30 days |
+| Free-to-Paid Conversion | 3% (industry avg) | 8% | Within 30 days |
+| Deep Work Sessions per Week | 8 sessions | 15 sessions | By Day 30 |
+| ML Prediction Accuracy | N/A (new) | 75% | By Day 30 |
+| User-Reported Productivity Improvement | N/A (new) | 35% increase | By Day 30 (survey) |
+| App Store Rating | N/A (new) | 4.7+ stars | Within 60 days |
+| Net Promoter Score (NPS) | N/A (new) | 50+ | By Day 90 |
+
+### Measurement Framework
+
+**Framework Used:** Custom hybrid of HEART + Deep Work Specific Metrics
+
+#### Happiness
+- **Metric:** In-app satisfaction survey (1-5 scale) after focus sessions
+- **Target:** Average 4.2+ satisfaction
+- **Collection:** Post-session prompt (optional, shown to 20% of sessions)
+
+#### Engagement
+- **Metric:** Focus sessions per week
+- **Target:** 15 sessions per week per active user
+- **Collection:** Automatic event tracking
+
+#### Adoption
+- **Metric:** Percentage of users who complete onboarding and activate first auto-focus session
+- **Target:** 80% of downloads
+- **Collection:** Onboarding funnel analytics
+
+#### Retention
+- **Metric:** Day 7, Day 30, Day 90 retention rates
+- **Target:** 65%, 45%, 30% respectively
+- **Collection:** User cohort analysis
+
+#### Task Success
+- **Metric:** Percentage of focus sessions completed without manual interruption
+- **Target:** 70% completion rate
+- **Collection:** Session outcome tracking
+
+#### Deep Work Specific Metrics
+
+**Focus Quality Score:**
+- **Metric:** Composite score based on session duration, interruption resistance, and app usage patterns
+- **Target:** 75+ average score (0-100 scale)
+- **Collection:** Calculated algorithm combining multiple data points
+
+**Distraction Prevention Rate:**
+- **Metric:** Percentage reduction in distraction app usage during work hours
+- **Target:** 60% reduction vs pre-FocusFlow baseline
+- **Collection:** Screen Time API comparison (with user permission)
+
+**Predictive Accuracy:**
+- **Metric:** Percentage of auto-activated focus sessions that user keeps active (vs dismisses)
+- **Target:** 75% acceptance rate
+- **Collection:** User interaction tracking on auto-activation prompts
+
+### Analytics Implementation
+
+#### Events to Track
+
+**Onboarding Events:**
+- `onboarding_started` - When user first opens app
+- `onboarding_completed` - When user finishes setup
+- `permission_granted` - When specific permission is approved (calendar, screen time, notifications)
+- `permission_denied` - When specific permission is rejected
+- `persona_selected` - When user chooses their work style/role
+
+**Focus Session Events:**
+- `focus_session_started` - Session begins (manual or auto)
+  - Properties: trigger_type (manual/auto/calendar/predicted), session_type (deep_work/meeting/light)
+- `focus_session_ended` - Session completes
+  - Properties: duration_minutes, completion_status (completed/interrupted/dismissed), quality_score
+- `focus_session_interrupted` - User manually interrupts session
+  - Properties: duration_before_interrupt, reason (if provided)
+- `app_blocked` - Blocked app access attempted during focus
+  - Properties: app_name, session_type, user_reaction (accepted/overrode)
+- `notification_filtered` - Notification blocked or allowed
+  - Properties: app_source, urgency_score, filter_decision, user_override (if any)
+
+**AI/ML Events:**
+- `prediction_made` - AI suggests focus session
+  - Properties: confidence_score, trigger_factors, time_of_day
+- `prediction_accepted` - User accepts AI suggestion
+- `prediction_dismissed` - User rejects AI suggestion
+  - Properties: dismissal_reason (if provided)
+- `habit_pattern_detected` - New pattern identified in user behavior
+  - Properties: pattern_type, confidence_level
+
+**Feature Usage Events:**
+- `vip_contact_added` - User adds VIP contact
+- `app_recategorized` - User moves app between categories
+- `settings_changed` - User modifies configuration
+  - Properties: setting_name, old_value, new_value
+- `deep_work_score_viewed` - User checks their daily score
+- `weekly_report_viewed` - User opens weekly summary
+- `shortcut_executed` - Siri Shortcut triggered
+  - Properties: shortcut_type
+
+**Subscription Events:**
+- `paywall_viewed` - User sees premium feature paywall
+- `subscription_started` - User begins paid subscription
+  - Properties: plan_type (monthly/annual), source (feature_gate/onboarding/settings)
+- `subscription_cancelled` - User cancels subscription
+  - Properties: days_subscribed, cancellation_reason
+- `trial_started` - User begins free trial
+- `trial_converted` - Free trial converts to paid
+- `trial_ended` - Free trial ends without conversion
+
+#### Dashboards
+
+**Product Dashboard (Daily Review):**
+- Real-time daily active users (DAU) and session counts
+- Current day aggregates: total deep work minutes, session quality scores, prediction accuracy
+- Retention cohorts: Day 1, 7, 30, 90 snapshots
+- Crash reports and error rates
+- **Link:** [To be created in Amplitude/Mixpanel]
+
+**Growth Dashboard (Weekly Review):**
+- Weekly downloads, onboarding completion rate, funnel drop-off points
+- Free-to-paid conversion rate and trial performance
+- App Store rating trends and review sentiment
+- Marketing channel attribution
+- **Link:** [To be created in Amplitude/Mixpanel]
+
+**ML Performance Dashboard (Weekly Review):**
+- Prediction accuracy by prediction type
+- Model confidence distributions
+- User override rates and patterns
+- Feature importance analysis
+- A/B test results for algorithm improvements
+- **Link:** [To be created in custom internal tool]
+
+**Business Metrics Dashboard (Monthly Review):**
+- Monthly Recurring Revenue (MRR) and growth rate
+- Customer Acquisition Cost (CAC) and Lifetime Value (LTV)
+- Churn analysis and reasons
+- Unit economics and profitability projections
+- **Link:** [To be created in Stripe Analytics + custom aggregation]
+
+---
+
+## Scope
+
+### In Scope
+
+#### Phase 1 (MVP - Launch Q3 2026)
+
+**Core Functionality:**
+- Calendar integration with automatic event detection and classification
+- Screen Time API integration for habit learning and pattern analysis
+- ML-powered focus session prediction and auto-activation
+- Intelligent notification filtering with VIP contact bypass
+- Apple Focus Mode enhancement and automation
+- Basic app categorization and blocking
+- Daily Deep Work Score calculation
+- Simple in-app analytics showing daily/weekly patterns
+
+**Platform Support:**
+- iPhone running iOS 17.0+ (optimized for iOS 18.0+)
+- On-device ML processing using Core ML
+- iCloud sync for settings and basic data
+
+**User Experience:**
+- 3-minute onboarding flow
+- Minimal manual configuration required
+- Real-time focus session management
+- Post-session completion summaries
+
+**Monetization:**
+- Freemium model with core features free
+- Premium tier ($4.99/month) includes:
+  - Deep Work Score with detailed analytics
+  - Weekly Focus Reports
+  - Advanced AI predictions
+  - Unlimited focus session history
+  - Priority customer support
+
+#### Phase 2 (Post-MVP - Q4 2026 to Q2 2027)
+
+**Enhanced Features:**
+- Apple Watch app with complications and independent session control
+- Advanced analytics with predictive insights and recommendations
+- Website blocking within Safari (content filter extension)
+- Focus sharing with teammates (opt-in collaboration features)
+- Customizable focus session types beyond defaults
+- Integration with task management apps (Todoist, Things, etc.)
+- Meditation/break suggestions between focus sessions
+
+**Platform Expansion:**
+- macOS app with cross-device session continuity
+- iPad optimization with split-screen awareness
+- Home Screen widgets for quick status and controls
+
+**Advanced AI:**
+- Natural language session creation ("Focus for client work for 2 hours")
+- Proactive meeting preparation suggestions
+- Energy-level-based focus scheduling
+- Multi-day pattern recognition for optimal planning
+
+### Out of Scope
+
+#### Explicitly Excluded from V1
+
+**Feature Exclusions:**
+- **Android/Windows support:** iOS/Apple ecosystem only for V1, other platforms are 12+ months away
+- **Browser extension for desktop:** No desktop component in V1, macOS app comes later
+- **Team/Enterprise features:** Individual users only; team dashboards, admin controls, and bulk licensing are V2+
+- **Content creation tools:** FocusFlow manages environment, not tasks. No notes, docs, or task creation features
+- **Communication features:** No built-in chat, email, or messaging to replace blocked apps
+- **Pomodoro timers:** We respect existing time management methods but don't replicate timer functionality
+- **Gamification:** No points, badges, or competitive leaderboards (may reconsider for V2 based on research)
+- **Social network:** No user community, forums, or social features in V1
+- **Integrations beyond Apple ecosystem:** No Google Calendar, Microsoft Outlook, or third-party app integrations in V1
+- **Offline mode:** Requires internet for initial setup and periodic sync, though core focus features work offline
+- **Wearables beyond Apple Watch:** No Fitbit, Garmin, or other fitness tracker integration
+
+**Philosophical Exclusions (Not Roadmap Items):**
+- **Productivity consulting or coaching:** FocusFlow is a tool, not a service
+- **Content filtering based on keywords in messages:** Privacy-invasive and ethically questionable
+- **Employer surveillance features:** Will never build employee monitoring for managers/employers
+- **Algorithmic manipulation:** No dark patterns to increase engagement beyond genuine value
+- **Data monetization:** User behavioral data will never be sold or used for advertising
+
+### Future Considerations
+
+#### Potential Future Enhancements (Under Research)
+
+**Year 2+ Possibilities:**
+- **Multi-user/family plans:** Shared settings for household, parental controls for teens
+- **Integration hub:** Connect with popular productivity apps (Asana, Notion, Linear, etc.)
+- **Focus music integration:** Partnership with Spotify/Apple Music for focus-optimized playlists
+- **Biometric integration:** Use Apple Watch heart rate, HRV for energy-based scheduling
+- **AI assistant conversations:** Natural language interaction for session planning and insights
+- **Corporate wellness programs:** B2B offering for employee productivity improvement
+- **Developer API:** Allow third-party apps to integrate with FocusFlow focus states
+- **Cross-platform expansion:** Android app if market demand proves sufficient
+- **Geographic focus communities:** Connect users in same city for occasional accountability meetups
+- **Research partnership program:** Collaborate with universities studying productivity and attention
+
+**Dependent on User Research:**
+- Whether users want social accountability features or prefer privacy
+- If team features should be collaborative or simply awareness-based
+- Whether gamification increases sustained engagement or feels gimmicky
+- If users would pay premium for AI coaching vs just environmental management
+
+---
+
+## Technical Considerations
+
+### High-Level Architecture
+
+**Architecture Pattern:** Client-side processing with minimal backend
+
+FocusFlow follows a privacy-first, on-device architecture where all sensitive user data and ML processing occurs locally on the iPhone. The backend serves only for user authentication, subscription management, and optional anonymize
