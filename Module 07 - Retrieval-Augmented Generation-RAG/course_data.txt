@@ -1,0 +1,45 @@
+Course Title: AI-2025 - Advanced Artificial Intelligence
+
+Instructor: Dr. John Smith
+Email: john.smith@university.edu
+Office: Building A, Room 101
+Office Hours: Mondays and Wednesdays, 2:00 PM - 4:00 PM
+
+Course Description:
+This course explores advanced topics in artificial intelligence, including machine learning algorithms, neural networks, natural language processing, computer vision, and ethical considerations in AI. Students will engage in hands-on labs and a final project to apply theoretical concepts to real-world problems.
+
+Prerequisites:
+- AI-101: Introduction to Artificial Intelligence
+- CS-201: Programming in Python
+- MATH-301: Linear Algebra and Probability
+
+Grading Policy:
+- Final Project: 50% (Group or individual project demonstrating AI application)
+- Labs: 30% (Weekly assignments on implementing AI techniques)
+- Midterm Exam: 20% (In-class exam covering foundational concepts)
+
+Attendance Policy:
+Attendance is mandatory for all lectures and labs. More than 3 unexcused absences may result in a grade penalty.
+
+Required Textbooks:
+- Artificial Intelligence: A Modern Approach (4th Edition) by Stuart Russell and Peter Norvig
+- Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
+
+Additional Resources:
+- Online: Coursera - Machine Learning by Andrew Ng
+- Software: Python 3.x, TensorFlow, PyTorch, scikit-learn
+
+Schedule Outline:
+- Week 1-2: Introduction to AI and Search Algorithms
+- Week 3-5: Machine Learning Basics (Supervised, Unsupervised)
+- Week 6: Midterm Exam
+- Week 7-9: Neural Networks and Deep Learning
+- Week 10-12: NLP and Computer Vision
+- Week 13-14: Ethics in AI and Advanced Topics
+- Week 15: Final Project Presentations
+
+Academic Integrity:
+All work must be original. Plagiarism or cheating will result in a failing grade and possible disciplinary action.
+
+Contact:
+For questions, please email the instructor or attend office hours.
